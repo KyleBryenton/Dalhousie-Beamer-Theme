@@ -19,7 +19,7 @@ My hope is two-fold:
 1. The showcases here will be interesting for experienced LaTeX users.
 2. The examples will be pedagogically useful for newer LaTeX users and will help kick-start their first few presentations.
 
-Also included is my personal colour-blind friendly swatches I use for my graphics. See: `ColourBlindSwatches.txt`
+Also included is my personal colour-blind friendly swatches I use for my graphics. See: [`ColourBlindSwatches.txt`](https://github.com/KyleBryenton/Dalhousie-Beamer-Theme/blob/main/ColourBlindSwatches.txt)
 
 ## Usage
 
