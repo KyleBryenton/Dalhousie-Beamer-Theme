@@ -29,7 +29,7 @@ Overleaf is an online LaTeX editor that allows you to compile LaTeX documents in
 
 1. Go to [`Dalhousie-Beamer-Theme`](https://github.com/KyleBryenton/Dalhousie-Beamer-Theme).
 
-2. Click the green "<> Code" button, and "Download ZIP".
+2. Click the green `<> Code` button, and then `Download ZIP`.
 
 3. Extract `Dalhousie-Beamer-Theme-main.zip`, and upload the contents to a blank Overleaf project.
 
