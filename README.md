@@ -21,6 +21,8 @@ My hope is two-fold:
 
 Also included is my personal colour-blind friendly swatches I use for my graphics. See: [`ColourBlindSwatches.txt`](https://github.com/KyleBryenton/Dalhousie-Beamer-Theme/blob/main/ColourBlindSwatches.txt)
 
+_I intend to clean up my Dalhousie Poster Template and add it here at a later date. If interested, please contact me for a pre-release version._
+
 ## Usage
 
 To use these templates, follow these steps:
