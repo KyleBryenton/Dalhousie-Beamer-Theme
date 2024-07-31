@@ -1,0 +1,402 @@
+\documentclass[9pt,mathserif,usepdftitle=false,aspectratio=169]{beamer}
+
+% --- Essential ---
+
+\usepackage[utf8]{inputenc}                % Some citations and accents require this package
+\useoutertheme{smoothbars}                 % Comment for navigation bar vertical subsection stacking
+\usetheme{Dal_16x9}                        % For 4x3 format: \usetheme{Dal_4x3} and remove ``aspectratio=169''
+\usecolortheme{Dal}                        % Offical Dalhousie colours, with slight saturation adjustments
+\usepackage{appendixnumberbeamer}          % Fixes beamer frame numbering when calling \appendix
+\setbeamertemplate{footline}[frame number] % Adds frame numbering to bottom-right of each slide. 
+
+% --- Highly Recommended ---
+
+\usepackage{physics}                       % Adds physics-related macros, e.g. \abs{x}
+\usepackage{braket}                        % Adds Bra-Ket notation support, e.g. \braket{1|0}, \bra{1}, \ket{0}
+\usepackage{chemformula}                   % Adds proper chemical formula typesetting, e.g. \ch{H2O} 
+\usepackage{booktabs}                      % Adds \toprule, \midrule, \bottomrule for tabular environments
+\usepackage{upgreek}                       % Allows typsetting of upright Greek characters, e.g. \uppi
+\usepackage{transparent}                   % Allows you to manually set opacity using \transparent{0.##}{} 
+\usepackage{bm} 				           % Bold math \bm and \boldsymbol, useful for vectors
+	\newcommand{\bs}{\boldsymbol}
+\usepackage{pifont}                        % For checkmarks and x's, useful for to-do lists
+	\newcommand{\cmark}{\ding{51}}
+	\newcommand{\xmark}{\ding{55}}
+\usepackage{parskip}                       % To Reduce spacing between paragraphs
+	\setlength{\parskip}{\smallskipamount} 
+
+% --- Elegant Footnote Citations: \footnotecite{} and \doi{} ---
+
+\newcommand*{\doi}[1]{\href{http://dx.doi.org/#1}{doi: #1}}
+\newcommand{\footnotecite[1]}{%
+	\scriptsize \flushleft
+	\vskip 0pt plus 1filll
+	\rule{4cm}{.5pt}\\
+}
+
+% --- Uncovering Graphics with Transparency: \uncovergraphics{} ---
+
+\newcommand<>{\uncovergraphics}[2][{}]{    % Taken from: https://tex.stackexchange.com/a/354033/95423
+    \begin{tikzpicture}
+        \node[anchor=south west,inner sep=0] (B) at (4,0){\includegraphics[#1]{#2}};
+        \alt#3{}{\fill [draw=none, fill=white, fill opacity=0.7] 
+            (B.north west) -- (B.north east) -- (B.south east) -- 
+            (B.south west) -- (B.north west) -- cycle;
+        }
+    \end{tikzpicture}
+}
+
+
+\title{
+	\vspace*{1.5cm} \\
+	\textsc{\LARGE Dalhousie Beamer Template\\ \small \copyright \, K.\@ R.\@ Bryenton (2024)}\\
+	\medskip 
+	\href{https://github.com/KyleBryenton/slides-posters}{\includegraphics[width=0.5\textheight]{example-image-a}}\\
+	\medskip 
+	\large Kyle R.\@ Bryenton\\
+	\large Dalhousie Department of Physics \& Atmospheric Science\\
+	\large July 31, 2024
+}
+
+
+
+
+
+
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+% If you have a long talk, consider uncommenting 
+% this block so you can talk about each section
+% first, rather than just jumping in.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\miniframesoff
+%\begin{frame}
+%\tableofcontents[
+%    sectionstyle=show, 
+%    subsectionstyle=hide, 
+%    subsubsectionstyle=hide
+%    ]
+%\end{frame}
+%\miniframeson
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\miniframesoff
+\begin{frame}
+Section 1 showcases a combination of the custom functions: \texttt{\textbackslash uncovergraphics\{\}} and \texttt{\textbackslash footnotecite\{\}}. These can be used to highlight different projects you've worked on. \\
+\bigskip
+Section 2 showcases various examples of how this theme treats different elements. It also, hopefully, serves as a useful starting points for those new to Beamer/\LaTeX. It covers math, references, tables, blocks, uncovering, pauses, columns, graphics, itemize, transparency, and other useful tricks for newcomers. \\
+\bigskip
+Section 3 is a bulk-standard conclusion slide template, and also an appendix slide example. \\
+\bigskip
+Notes:
+\begin{itemize}
+\item \textcolor{red}{You may need to build a \underline{few} times to get the title page / references / links to properly render} 
+\item Always double-check your final build to make sure everything is as it should be
+\item This example showcases both this theme works and also some tricks I've learned over the years
+\item My aim is to be able to give this template to someone new to \LaTeX\ and it will give them almost everything they need to jump into their first beamer presentation
+\end{itemize}
+\end{frame}
+\miniframeson
+
+\section{Showcase: Showing Off Your Different Projects}
+\miniframesoff
+\begin{frame}
+\tableofcontents[
+  sectionstyle=show/shaded,
+  subsectionstyle=show/show/hide,
+  subsubsectionstyle=show/show/show/hide
+  ]
+\end{frame}
+\miniframeson
+
+\begin{frame} \setbeamercovered{transparent=30}
+\begin{columns}
+\begin{column}{0.49\textwidth}
+\centering
+\uncover<1,2>{
+  \begin{block}{\small The 1st project you worked on} \centering
+  \begin{overlayarea}{\columnwidth}{0.25\textheight}\centering
+  \uncovergraphics<1,2>[height=0.25\textheight]{example-image-A}
+  \end{overlayarea}
+  \footnotecite{\tiny Did you publish this yet? Cite it, \textbf{bold your name in the author list}, and include a pretty graphic from it. Notice the \texttt{\textbackslash doi\{\}} command. It's a clickable link using \texttt{\textbackslash href\{\}}.}
+  \end{block}
+}
+\uncover<1,4>{
+  \begin{block}{\small The 3rd project} \centering
+  \begin{overlayarea}{\columnwidth}{0.25\textheight}\centering
+  \uncovergraphics<1,4>[height=0.25\textheight]{example-image-C}
+  \end{overlayarea}
+  \footnotecite{\tiny If the \texttt{\textbackslash footnotecite\{\}}s don't have the same number of lines (vertical size) it can mess up spacing. If all else fails, you can use \texttt{\textbackslash phantom\{\}}. See the last block's code.}
+  \end{block}
+}
+\end{column} \hfill
+\begin{column}{0.49\textwidth}
+\centering
+\uncover<1,3>{
+  \begin{block}{\small Delocalization Error: Greatest Outstanding Challenge} \centering
+  \begin{overlayarea}{\columnwidth}{0.25\textheight}\centering
+  \uncovergraphics<1,3>[height=0.25\textheight]{example-image-B}
+  \end{overlayarea}
+  \footnotecite{\tiny \textbf{K.\@ R.\@ Bryenton}, A.\@ A.\@ Adeleke, S.\@ G.\@ Dale, \& E.\@ R.\@ Johnson, \textit{WIREs Comp.\@ Mol.\@ Sci.\@} 13, e1631 (2023). \doi{10.1002/wcms.1631}}
+  \end{block}
+}
+\uncover<1,5>{
+  \begin{block}{\small Your current project} \centering
+  \begin{overlayarea}{\columnwidth}{0.25\textheight}\centering
+  \hspace*{-1ex}\uncovergraphics<1,5>[height=0.25\textheight]{example-image}
+  \end{overlayarea}
+  \footnotecite{\tiny \textbf{K.\@ R.\@ Bryenton}, \& E.\@ R.\@ Johnson, Manuscript in preparation (2024)  \phantom{This phantom text doesn't show up, but it inserts and equivalent amount of empty space, thus making LateX think this fills two lines.}}
+  \end{block}
+}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\section{Examples: Different Types of Body Slides}
+\miniframesoff
+\begin{frame}
+\tableofcontents[
+  sectionstyle=show/shaded,
+  subsectionstyle=show/show/hide,
+  subsubsectionstyle=show/show/show/hide
+  ]
+\end{frame}
+\miniframeson
+
+
+
+\subsection{Math and \textbackslash footnotecite\{\}}
+\begin{frame}{\large\textsc{Math and \textbackslash footnotecite\{\}}} \setbeamercovered{transparent=30}
+\vspace*{2em}
+Note the extra spacing at the top of this slide via \texttt{\textbackslash vspace*\{2em\}}
+\begin{align*} 
+E_{\text{XDM}} &= - \sum_{j<i} \sum_{n=6,8,10} f^{\text{BJ}}_{n}(R_{ij}) \frac{C_{n,ij} }{R_{ij}^{n}} \\
+               &= - \sum_{j<i} \left[ f^{\text{BJ}}_{6}(R_{ij}) \frac{C_{6,ij} }{R_{ij}^{6}} + 
+                                      f^{\text{BJ}}_{8}(R_{ij}) \frac{C_{8,ij} }{R_{ij}^{8}} + 
+                                      f^{\text{BJ}}_{10}(R_{ij}) \frac{C_{10,ij} }{R_{ij}^{10}} \right] \,. \\
+\end{align*}
+When you use \texttt{\textbackslash footnotecite\{\}}, it vertically fills the slide to get the positioning the same each time
+\begin{equation*}
+d_{\text{X}\sigma}(\bm{r}) = \left[ \int h_{\text{X}\sigma}\big(\bm{r},\bm{s}\big) \, s \, d\bm{s} \right] - \bm{r} \,.
+\end{equation*} 
+Because of this, it can cramp the top of the slide. You can add a bit of spacing to fix this.
+\footnotecite{Becke, A.\@ D.\@ \& Johnson, E.\@ R.\@ \textit{J.\@ Chem.\@ Phys.\@} \textbf{127}, 154108. (2007) \doi{10.1063/1.2795701}}
+\end{frame}
+
+
+\subsection{Pretty Tables}
+\begin{frame}{\large\textsc{Table using the booktabs package}}
+\begin{center}
+If you want a traditional but polished look, you can make use of the\\
+\texttt{booktabs} package's \texttt{\textbackslash toprule}, \texttt{\textbackslash midrule}, and \texttt{\textbackslash bottomrule}.  \\
+\bigskip
+\begin{table}
+\textrm{XCDM vs.\@ XDM: Mean Absolute Error (MAE) \% Change}
+\begin{tabular}{rll}
+\toprule
+Benchmark    &  MAE Chg.\@                                      & Description                               \\ \midrule
+     KB49    & \textcolor{green!50!black}{$\bm\downarrow$} 1\%  & Intermolecular Complexes                  \\
+    MolC6    & \textcolor{green!50!black}{$\bm\downarrow$} 15\% & Molecular $C_6$ Coefficients              \\
+S22$\times$5 & $\sim$                                           & Small Molecular Dimers \& Non-Eq.\@ Geoms \\
+S66$\times$8 & $\sim$                                           & Small Molecular Dimers \& Non-Eq.\@ Geoms \\
+    3B-69    & \textcolor{green!50!black}{$\bm\downarrow$} 2\%  & Small Molecular Trimers                   \\
+  Heavy28    & \textcolor{green!50!black}{$\bm\downarrow$} 3\%  & Complexes with Heavy Atom Hydrides        \\
+       L7    & \textcolor{green!50!black}{$\bm\downarrow$} 2\%  & Large Molecular Complexes                 \\
+      S6L    & \textcolor{green!50!black}{$\bm\downarrow$} 10\% & Large Molecular Complexes                 \\
+      X23    & \textcolor{green!50!black}{$\bm\downarrow$} 5\%  & Molecular Crystals                        \\
+    Ice13    & $\sim$                                           & Ice Crystal Phases                        \\
+ HalCrys4    & \textcolor{red}{$\bm{\uparrow}$} 1\%             & Halogen Crystals                          \\
+     LM26    & \textcolor{red}{$\bm{\uparrow}$} 5\%             & Layered Materials                         \\ \bottomrule
+\end{tabular}
+\end{table}
+\end{center}
+\end{frame}
+
+
+\begin{frame}{\large\textsc{Table using \textbackslash block\{\}}}
+\begin{itemize}
+\item Alternatively, you can use a \texttt{block} to get a splash of colour with your table (or theorems, etc).
+\item Using \texttt{columns} can also help make room for important takeaways on the side.
+\end{itemize}
+\begin{columns}
+\begin{column}{0.75\textwidth}
+  \begin{block}{\large\textbf{XCDM vs.\@ XDM: Mean Absolute Error (MAE) \% Change}}
+  \begin{table}
+  \begin{tabular}{rll}
+  Benchmark    &  MAE Chg.\@                                      & Description                               \\ \midrule
+          KB49 & \textcolor{green!50!black}{$\bm\downarrow$} 1\%  & Intermolecular Complexes                  \\
+         MolC6 & \textcolor{green!50!black}{$\bm\downarrow$} 15\% & Molecular $C_6$ Coefficients              \\
+  S22$\times$5 & $\sim$                                           & Small Molecular Dimers \& Non-Eq.\@ Geoms \\
+  S66$\times$8 & $\sim$                                           & Small Molecular Dimers \& Non-Eq.\@ Geoms \\
+         3B-69 & \textcolor{green!50!black}{$\bm\downarrow$} 2\%  & Small Molecular Trimers                   \\
+       Heavy28 & \textcolor{green!50!black}{$\bm\downarrow$} 3\%  & Complexes with Heavy Atom Hydrides        \\
+            L7 & \textcolor{green!50!black}{$\bm\downarrow$} 2\%  & Large Molecular Complexes                 \\
+           S6L & \textcolor{green!50!black}{$\bm\downarrow$} 10\% & Large Molecular Complexes                 \\
+           X23 & \textcolor{green!50!black}{$\bm\downarrow$} 5\%  & Molecular Crystals                        \\
+         Ice13 & $\sim$                                           & Ice Crystal Phases                        \\
+      HalCrys4 & \textcolor{red}{$\bm{\uparrow}$} 1\%             & Halogen Crystals                          \\
+          LM26 & \textcolor{red}{$\bm{\uparrow}$} 5\%             & Layered Materials                         \\ 
+  \end{tabular}
+  \end{table}
+  \end{block}
+\end{column}
+\begin{column}{0.3\textwidth}
+  \smallskip\\
+  \underline{Observations:}\\
+  \medskip
+  \begin{itemize} \setlength\itemsep{1ex}
+    \item Our previous conjecture that dynamical correlation doesn't matter much was generally correct
+    \item MolC6's improvement shows we're accurately modelling the physics
+    \item XCDM typically captures an additional 0.02-0.10 kcal/mol binding energy
+    \item If XDM overbinds, XCDM often (but not always) compounds the error
+  \end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+
+\subsection{Itemize}
+\begin{frame}{\large\textsc{Itemize}} \setbeamercovered{transparent=30}
+\begin{columns}
+\begin{column}{0.65\textwidth}
+  Here we see an example where we control what points are visible in the \texttt{itemize} environment. \\
+  \bigskip
+  You can control transparency using the command in the slide header: \texttt{\textbackslash setbeamercovered\{transparent=30\}}\\
+  \bigskip
+  Using Itemize to show/hide:
+  \begin{itemize}
+    \item<1>     Visible on slide 1 only
+    \item<2->    Visible on slide 2 onwards
+    \item<-2>    Visible Item shows up only until slide 2
+    \item        Visible on all slides
+    \item<1-2,4> Visible on slides 1-2 and 4
+  \end{itemize}
+\end{column}
+\begin{column}{0.35\textwidth}
+  \bigskip
+  \includegraphics[width=\textwidth]{example-image-a} 
+  \footnotecite{Another use of \textbackslash footnotecite\{\} is picture labelling}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\subsection{To Do List}
+\begin{frame}{\large\textsc{To Do List}}
+\vspace*{1ex}
+\begin{itemize} \setlength\itemsep{2em}
+\item[1)] \normalsize Here is the first project I'm working on
+  \begin{itemize} \small
+  \item[{\large\color{green!70!black}\cmark}] I have done this
+  \item[{\large\color{green!70!black}\cmark}] and this
+  \item[{\large\color{green!70!black}\cmark}] and this!
+  \item[{\large\color{red!80!black}\xmark}\,] But not this
+  \item[{\large\color{red!80!black}\xmark}\,] ... or this
+  \end{itemize}
+\end{itemize}
+\vspace*{1em}
+{\transparent{0.3}
+\begin{itemize} \setlength\itemsep{2em}
+\item[2)] \normalsize Want to only talk about the first project for now? 
+  \begin{itemize} \small
+  \item[{\large\color{green!70!black}\cmark}] You can leave the second project wrapped by \texttt{\textbackslash transparent\{\}}
+  \item[{\large\color{green!70!black}\cmark}] Then you can come back to it later in the talk.
+  \item[{\large\color{green!70!black}\cmark}] Just copy/paste this entire slide into a point later in the talk once you need it.
+  \item[{\large\color{red!80!black}\xmark}\,] Then, just switch which list is wrapped by \texttt{\textbackslash transparent\{\}} !
+  \end{itemize}
+\end{itemize}
+}
+\end{frame}
+
+
+\section{Conclusions}
+\miniframesoff
+\begin{frame}
+\tableofcontents[
+   sectionstyle=show/shaded,
+   subsectionstyle=show/show/hide,
+   subsubsectionstyle=show/show/show/hide
+   ]
+\end{frame}
+\miniframeson
+
+\begin{frame}{\large\textsc{Key Takeaways}}
+\vspace*{1ex}
+{\large
+\begin{enumerate}
+\item[1.] I hope this template is useful to you. \\ \bigskip
+\item[2.] I encourage anybody to share or modify any/all of these files. \\ \bigskip
+\item[3.] The \texttt{.sty} files should be easy to modify to suit another university's colour scheme. You will have to generate your own background image for the title slide, though. \\ \bigskip 
+\item[4.] I will keep my template and this example on my GitHub: \texttt{\textcolor{blue}{\href{https://github.com/KyleBryenton}{https://github.com/KyleBryenton/Dalhousie-Beamer-Theme}}} \\ \bigskip
+\end{enumerate}
+}
+\end{frame}
+
+\begin{frame}{\huge\textsc{Acknowledgements}}
+\vspace*{1em}
+\centering
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\centering
+\includegraphics[height=0.8\textheight,trim={1cm 0 1cm 0},clip]{example-image}
+\end{column}
+\begin{column}{0.45\textwidth}
+$\Leftarrow$ Your Group Photo
+\begin{itemize}
+\item Note that you can use ``trim''
+\item within \texttt{\textbackslash includegraphics} to 
+\item crop/shape an image without 
+\item having to manually crop it.
+\item It's great for group photos!
+\end{itemize}
+\vspace*{1em}
+Funding and Resources:
+\begin{itemize}
+\item Funding
+\item Funding
+\item Funding
+\item Your University
+\item Computational Resource
+\item Computational Resource
+\item Computational Resource
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{\huge\textsc{Questions?}}
+\vspace*{0.1cm}
+\centering
+\large\textsc{Want My Slides?}\\
+\footnotesize\textsc{(I like to add a QR code here, and also hyperlink the image itself.)}\\
+\bigskip 
+\href{https://github.com/KyleBryenton/slides-posters}{\includegraphics[height=0.65\textheight]{example-image-a}}\\
+\bigskip
+\vspace*{-12pt}\href{https://github.com/KyleBryenton/Dalhousie-Beamer-Theme}{\tiny\textsc{https://github.com/KyleBryenton/Dalhousie-Beamer-Theme}}\\
+\href{mailto:Kyle.Bryenton@dal.ca}{\large\textsc{Kyle.Bryenton@dal.ca}}\\
+\end{frame}
+
+
+\appendix
+
+\section{Appendix 1}
+\begin{frame}
+Example appendix slide. 
+\end{frame}
+
+\section{Appendix 2}
+\begin{frame}
+Another example appendix slide. Heavily-sectioning in the appendix is useful for question periods. Then you can quickly swap to a specific slide using the nav-bullets at the top. 
+\end{frame}
+
+
+\end{document}

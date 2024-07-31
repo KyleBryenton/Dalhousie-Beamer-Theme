@@ -1,0 +1,86 @@
+Kyle R. Bryenton - 2024-07-31
+
+The following are colourblind friendly palates, each swatch ordered from light to dark. 
+To use, avoid mixing similarly-bright colours from incompatible swatches ( {1&2}, {3&4}, {5&6} )
+
+My hand-picked 12-colour palette is:
+#0079FA 
+#A40122
+#00D302
+#450270
+#00735C
+#FF5AAF
+#FFDC3D
+#004002
+#00C2F9
+#FFCCFE
+#560133
+#86FFDE
+
+A useful tool to check if your graphics are colourblind-safe: https://pilestone.com/pages/color-blindness-simulator-1
+
+References: 
+1) Krzywinski M., Designing for Color blindness, Canada’s Michael Smith Genome Sciences Centre. url: https://mk.bcgsc.ca/colorblind/img/colorblindness.palettes.v11.pdf (Accessed 2024)
+2) Wong, B. Points of View: Colour Blindness. Nature Methods 8:441. (2011)
+
+---
+
+Swatch 1: RED (Incompatible with Swatch 2)
+#5A000F
+#7E0018
+#A40122
+#CD022D
+#F60239
+#FF6E3A
+#FFAC3B
+#FFDC3D
+
+Swatch 2: GREEN (Incompatible with Swatch 1)
+#004002
+#005A01
+#007702
+#009503
+#00B408
+#00D302
+#00F407
+#AFFF2A
+
+Swatch 3: BLUE (Incompatible with Swatch 4)
+#00306F
+#00489E
+#005FCC
+#0079FA
+#009FFA
+#00C2F9
+#00E5F8
+#7CFFFA
+
+Swatch 4: PURPLE (Incompatible with Swatch 3)
+#450270
+#65019F
+#8400CD
+#A700FC
+#DA00FD
+#FF3CFE
+#FF92FD
+#FFCCFE
+
+Swatch 5: MAGENTA (Incompatible with Swatch 6)
+#560133
+#790149
+#940162
+#C7007C
+#EF0096
+#FF5AAF
+#FF9DC8
+#FFCFE2
+
+Swatch 6: AQUAMARINE (Incompatible with Swatch 5)
+#003D30
+#005745
+#00735C
+#009175
+#00AF8E
+#00CBA7
+#00EBC1
+#86FFDE
