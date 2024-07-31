@@ -1,9 +1,0 @@
-\beamer@sectionintoc {1}{Showcase: Showing Off Your Different Projects}{3}{0}{1}
-\beamer@sectionintoc {2}{Examples: Different Types of Body Slides}{9}{0}{2}
-\beamer@subsectionintoc {2}{1}{Math and \textbackslash footnotecite\{\}}{10}{0}{2}
-\beamer@subsectionintoc {2}{2}{Pretty Tables}{11}{0}{2}
-\beamer@subsectionintoc {2}{3}{Itemize}{13}{0}{2}
-\beamer@subsectionintoc {2}{4}{To Do List}{17}{0}{2}
-\beamer@sectionintoc {3}{Conclusions}{18}{0}{3}
-\beamer@sectionintoc {4}{Appendix 1}{22}{1}{4}
-\beamer@sectionintoc {5}{Appendix 2}{23}{1}{5}
