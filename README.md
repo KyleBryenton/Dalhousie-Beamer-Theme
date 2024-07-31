@@ -37,6 +37,8 @@ Overleaf is an online LaTeX editor that allows you to compile LaTeX documents in
 
 ### Using a Local LaTeX Editor
 
+Instead of Overleaf (or if you need extended compile times) you may use a local editor. My personal preference has always been for [TeXMaker](https://www.xm1math.net/texmaker/download.html).
+
 1. Clone the repository:
     ```bash
     git clone https://github.com/KyleBryenton/Dalhousie-Beamer-Theme.git
